@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="canonical" href="{{URL}}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0f5a36">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Churrascaria Brasil">
+<meta property="og:title" content="Churrascaria Brasil em Tucano-BA: cardápio e pedidos pelo WhatsApp">
+<meta property="og:description" content="Churrasco, self-service, pratos do dia, pizzas, hambúrgueres, tapiocas, doces e bebidas. Lanchonete 24 horas e área kids grátis em Tucano, Bahia.">
+<meta property="og:url" content="{{URL}}">
+<meta property="og:image" content="{{URL}}assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo da Churrascaria Brasil, BR5, sobre fundo verde">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fredoka-kids.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">{{JSONLD}}</script>
+</head>
+<body>
+<a class="skip" href="#cardapio">Pular para o cardápio</a>
+{{ICONS}}
+<header class="hero">
+  <div class="hero-inner">
+    <div class="logo-wrap">
+      <img src="assets/logo.webp" width="176" height="176" alt="Logo BR5: Churrascaria, Lanchonete e Pizzaria Brasil, 5 anos de história" fetchpriority="high">
+      <svg class="verified" viewBox="0 0 512 512" role="img" aria-label="Página oficial"><circle cx="256" cy="256" r="256" fill="#2196F3"/><path d="M166 256l66 66 134-134" fill="none" stroke="#FAFAFA" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1><span class="h1-main">Churrascaria Brasil</span><span class="h1-sub">Lanchonete <b>24h</b>, Churrascaria e Pizzaria</span><span class="sr-only"> em Tucano, Bahia</span></h1>
+    <p class="kids"><span class="kids-badge"><span class="kids-word">Área</span> <span class="kids-logo"><span class="sr-only">kids</span><span class="kl kl-1" aria-hidden="true">K</span><span class="kl kl-2" aria-hidden="true">I</span><span class="kl kl-3" aria-hidden="true">D</span><span class="kl kl-4" aria-hidden="true">S</span></span> <span class="kids-word">grátis!</span></span></p>
+  </div>
+</header>
+
+<main>
+  <nav class="links" aria-label="Contatos e atalhos">
+    <a class="link link--primary" href="https://wa.me/{{WHATS}}?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20da%20Churrascaria%20Brasil." target="_blank" rel="noopener" data-evt="whatsapp_click" data-evt-label="links">
+      <span class="link-ic"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span>
+      <span class="link-text"><strong>Pedir pelo WhatsApp</strong><small>{{PHONE}} · entrega&nbsp;R$&nbsp;3,00</small></span>
+      <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+    </a>
+    <a class="link" href="#cardapio" data-evt="menu_click">
+      <span class="link-ic"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></span>
+      <span class="link-text"><strong>Ver cardápio</strong><small>Refeições, lanches, pizzas, doces e bebidas</small></span>
+      <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+    </a>
+    <a class="link" href="{{INSTA}}" target="_blank" rel="noopener" data-evt="instagram_click">
+      <span class="link-ic"><svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg></span>
+      <span class="link-text"><strong>Instagram</strong><small>@churrascariabrasill</small></span>
+      <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+    </a>
+    <a class="link" href="{{MAPS}}" target="_blank" rel="noopener" data-evt="maps_click">
+      <span class="link-ic"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span>
+      <span class="link-text"><strong>Como chegar</strong><small>Abrir a rota no Google Maps</small></span>
+      <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+    </a>
+    <a class="link" href="tel:+5575992140916" data-evt="phone_click">
+      <span class="link-ic"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span>
+      <span class="link-text"><strong>Ligar</strong><small>{{PHONE}}</small></span>
+      <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+    </a>
+  </nav>
+
+  <section id="cardapio" class="menu" aria-labelledby="cardapio-t">
+    <div class="menu-head">
+      <h2 id="cardapio-t">Cardápio</h2>
+      <p>Toque no preço para pôr na sacola. No fim, o pedido segue pronto para o WhatsApp.</p>
+    </div>
+
+    <div id="today" class="today" hidden></div>
+
+    <div class="menu-tools">
+      <label class="search">
+        <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+        <span class="sr-only">Buscar no cardápio</span>
+        <input type="search" id="q" placeholder="Buscar: feijoada, pizza, tapioca" autocomplete="off" maxlength="40" enterkeyhint="search">
+      </label>
+      <div class="chips-wrap">
+        <div class="chips" role="toolbar" aria-label="Categorias do cardápio">{{CHIPS}}</div>
+      </div>
+    </div>
+
+    <p id="empty" class="empty" hidden>Nada encontrado com essa palavra. Tente outra ou pergunte no WhatsApp.</p>
+
+    <div class="cats">{{MENU}}</div>
+
+    <p class="menu-foot">Preços de novembro de 2026, sujeitos a alteração. Alguns itens podem acabar ao longo do dia.</p>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-t">
+    <h2 id="faq-t">Perguntas frequentes</h2>
+    <details>
+      <summary>Onde fica a Churrascaria Brasil?</summary>
+      <p>Em Tucano, na Bahia. Toque em <a href="{{MAPS}}" target="_blank" rel="noopener" data-evt="maps_click">Como chegar</a> para abrir a rota no Google Maps.</p>
+    </details>
+    <details>
+      <summary>A lanchonete abre 24 horas?</summary>
+      <p>Sim. A lanchonete funciona 24 horas. Para saber o horário do churrasco, do almoço e da pizzaria no dia, chame no WhatsApp.</p>
+    </details>
+    <details>
+      <summary>Tem espaço para crianças?</summary>
+      <p>Sim. A Churrascaria Brasil tem área kids gratuita, para a família comer com tranquilidade enquanto as crianças brincam.</p>
+    </details>
+    <details>
+      <summary>Vocês fazem entrega?</summary>
+      <p>Sim. A taxa de entrega é de R$ 3,00. Monte o pedido aqui no cardápio e envie pelo WhatsApp com o seu endereço.</p>
+    </details>
+    <details>
+      <summary>O que tem no cardápio?</summary>
+      <p>Churrasco e self-service por quilo, pratos do dia no almoço, quentinhas, sopas e caldos, hambúrgueres, tapiocas, cuscuz, salgados, mais de 20 sabores de pizza, bolos e tortas, sucos naturais, sorvetes e açaí.</p>
+    </details>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot-name">Lanchonete, Churrascaria e Pizzaria Brasil<br>Tucano, Bahia</p>
+  <p class="foot-links">
+    <button type="button" class="linkish" data-open="privacy">Política de privacidade</button>
+    <button type="button" class="linkish" data-open="terms">Termos de uso</button>
+  </p>
+  <p class="foot-credit">Site por <a href="https://tallisdocarmo.com" target="_blank" rel="noopener">Tallis do Carmo</a></p>
+</footer>
+
+<div class="bagbar" id="bagbar" hidden>
+  <button type="button" class="bagbar-btn" id="openBag">
+    <span class="bagbar-count"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg><span id="bagCount">0</span></span>
+    <span class="bagbar-label">Ver sacola</span>
+    <strong id="bagTotal">R$ 0,00</strong>
+  </button>
+</div>
+
+<dialog id="bag" class="sheet" aria-labelledby="bag-t">
+  <form class="sheet-inner" id="bagForm" novalidate>
+    <div class="sheet-head">
+      <h2 id="bag-t">Sua sacola</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Fechar sacola"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <p id="bagEmpty" class="bag-empty">Sua sacola está vazia. Toque no preço de um item para adicionar.</p>
+    <ul id="bagList" class="bag-list" role="list"></ul>
+
+    <div id="checkout" class="checkout">
+      <fieldset class="seg">
+        <legend>Como prefere receber?</legend>
+        <label><input type="radio" name="mode" value="entrega" checked><span>Entrega <small>+ R$ 3,00</small></span></label>
+        <label><input type="radio" name="mode" value="retirada"><span>Retirar no balcão</span></label>
+      </fieldset>
+      <label class="field"><span>Seu nome</span><input name="nome" id="fNome" maxlength="60" autocomplete="name" required></label>
+      <label class="field" id="addrField"><span>Endereço de entrega</span><textarea name="endereco" id="fEnd" rows="2" maxlength="160" autocomplete="street-address" placeholder="Rua, número, bairro e ponto de referência"></textarea></label>
+      <fieldset class="seg">
+        <legend>Pagamento</legend>
+        <label><input type="radio" name="pag" value="Pix" checked><span>Pix</span></label>
+        <label><input type="radio" name="pag" value="Cartão"><span>Cartão</span></label>
+        <label><input type="radio" name="pag" value="Dinheiro"><span>Dinheiro</span></label>
+      </fieldset>
+      <label class="field" id="trocoField" hidden><span>Troco para quanto? <small>(opcional)</small></span><input name="troco" id="fTroco" inputmode="decimal" maxlength="10" placeholder="Ex.: 100"></label>
+      <label class="field"><span>Observações <small>(opcional)</small></span><textarea name="obs" id="fObs" rows="2" maxlength="200" placeholder="Ex.: sem cebola, sabor do brownie"></textarea></label>
+
+      <dl class="totals">
+        <div><dt>Itens</dt><dd id="tSub">R$ 0,00</dd></div>
+        <div id="tFeeRow"><dt>Entrega</dt><dd>R$ 3,00</dd></div>
+        <div class="tot"><dt>Total</dt><dd id="tTotal">R$ 0,00</dd></div>
+      </dl>
+      <p id="formErr" class="form-err" role="alert" hidden></p>
+      <button type="submit" class="send" id="send">
+        <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Enviar pedido pelo WhatsApp
+      </button>
+      <p class="fine">O restaurante confirma os valores e o tempo de entrega pelo WhatsApp. Nenhum pagamento é feito nesta página.</p>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="privacy" class="sheet" aria-labelledby="privacy-t">
+  <div class="sheet-inner prose">
+    <div class="sheet-head">
+      <h2 id="privacy-t">Política de privacidade</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Fechar"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <p>Esta página não tem cadastro, login nem pagamento, e não envia seus dados para servidor nenhum.</p>
+    <p>Os itens da sacola ficam guardados só no seu próprio aparelho, para você não perder o pedido se fechar a página. Você pode apagar tudo esvaziando a sacola.</p>
+    <p>Nome, endereço e observações que você digitar só saem do aparelho quando você toca em "Enviar pedido pelo WhatsApp". Nesse momento eles vão na mensagem para o WhatsApp do restaurante, e o uso passa a seguir as regras do WhatsApp e o atendimento da Churrascaria Brasil, conforme a Lei Geral de Proteção de Dados (LGPD).</p>
+    <p>Para pedir a exclusão de dados enviados por mensagem, fale com o restaurante pelo WhatsApp (75) 99214-0916.</p>
+  </div>
+</dialog>
+
+<dialog id="terms" class="sheet" aria-labelledby="terms-t">
+  <div class="sheet-inner prose">
+    <div class="sheet-head">
+      <h2 id="terms-t">Termos de uso</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Fechar"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <p>Este cardápio é informativo. Preços, sabores e disponibilidade podem mudar sem aviso, e o valor que vale é o confirmado pelo restaurante no atendimento.</p>
+    <p>O pedido só é aceito depois da confirmação pelo WhatsApp. A taxa de entrega e a área atendida também são confirmadas na conversa.</p>
+    <p>O nome e a marca BR5 pertencem à Lanchonete, Churrascaria e Pizzaria Brasil. Marcas de bebidas, sorvetes e doces citadas pertencem aos seus fabricantes.</p>
+  </div>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

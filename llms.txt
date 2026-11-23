@@ -1,0 +1,18 @@
+# Lanchonete, Churrascaria e Pizzaria Brasil (BR5)
+
+> Restaurante em Tucano, Bahia, Brasil, com lanchonete 24 horas, churrascaria com self-service por quilo e pizzaria. Também conhecido como Churrascaria Brasil, Pizzaria Brasil ou BR5. Pedidos pelo WhatsApp (75) 99214-0916, com entrega por R$ 3,00.
+
+## Informações principais
+- Cidade: Tucano, Bahia (BA), Brasil. Coordenadas: -10.97565, -38.79379
+- Lanchonete: aberta 24 horas
+- Área kids gratuita para crianças; ambiente familiar
+- Churrascaria: churrasco por quilo (R$ 90,00/kg), almoço self-service (R$ 74,90/kg), café da manhã e janta (R$ 65,00/kg)
+- Pratos do dia no almoço: segunda strogonoff de frango e ensopado de carneiro; terça lombo ao molho e dobradinha; quarta feijoada e bisteca frita; quinta rabada; sexta moqueca de peixe e bobó de camarão; sábado feijoada; domingo lombo bovino e lasanha
+- Pizzaria: 22 sabores salgados e 3 doces, tamanhos média (a partir de R$ 42,00) e família (a partir de R$ 58,00)
+- Também serve: hambúrgueres artesanais, tapiocas, cuscuz, salgados, padaria, confeitaria (bolos, tortas e doces por encomenda), sucos naturais, sorvetes e açaí
+- WhatsApp: https://wa.me/5575992140916
+- Instagram: https://www.instagram.com/churrascariabrasill/
+- Google Maps: https://www.google.com/maps/place/Lanchonete,+Churrascaria+e+Pizzaria+Brasil/@-10.9757599,-38.7941972,17z
+
+## Páginas
+- [Página de links e cardápio completo com preços](https://churrascariabrasil.github.io/): cardápio por categoria, prato do dia e pedido pelo WhatsApp
