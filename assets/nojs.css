@@ -1,0 +1,3 @@
+/* Sem JavaScript: mostra o cardápio inteiro e esconde controles que dependem de script */
+.cat[hidden] { display: block !important; }
+.menu-tools, .bagbar, .ic-plus { display: none !important; }

@@ -62,8 +62,7 @@ def render_item(cat, sec, item, idx):
     iid = f"{cat['id']}-{slug(sec['title'])}-{slug(item['name'])}-{idx}"
     prices = item["prices"]
     orderable = item.get("order", True)
-    search = norm(" ".join([item["name"], item["desc"], sec["title"], cat["title"]] + [p[0] for p in prices]))
-    attrs = f'class="item" id="{iid}" data-name="{e(item["name"])}" data-search="{e(search)}"'
+    attrs = f'class="item" id="{iid}" data-name="{e(item["name"])}"'
     if "day" in item:
         attrs += f' data-day="{item["day"]}"'
     head = f'<span class="item-name">{e(item["name"])}</span>'
@@ -78,15 +77,16 @@ def render_item(cat, sec, item, idx):
         opts = f'<span class="price-static">{brl(prices[0][1])}<small>{e(unit)}</small></span>'
     elif len(prices) == 1 and not prices[0][0]:
         p = prices[0][1]
-        opts = (f'<button type="button" class="add add-single" data-id="{iid}" data-label="" data-price="{p:.2f}" '
-                f'aria-label="Adicionar {e(item["name"])} à sacola, {brl(p)}">'
+        opts = (f'<button type="button" class="add add-single" data-id="{iid}" data-label="" data-price="{p:.2f}">'
+                f'<span class="sr-only">Adicionar {e(item["name"])} à sacola: </span>'
                 f'<span class="price">{brl(p)}</span>{icon("plus", "ic ic-plus")}</button>')
     else:
         btns = []
         for label, p in prices:
-            txt = f'<span class="v-label">{e(label)}</span>' if same else f'<span class="v-label">{e(label)}</span><span class="v-price">{brl(p)}</span>'
-            btns.append(f'<button type="button" class="add add-var" data-id="{iid}" data-label="{e(label)}" data-price="{p:.2f}" '
-                        f'aria-label="Adicionar {e(item["name"])} {e(label)} à sacola, {brl(p)}">{txt}</button>')
+            sr = f'<span class="sr-only">Adicionar {e(item["name"])} </span>'
+            txt = (f'<span class="v-label">{e(label)}</span><span class="sr-only"> por {brl(p)}</span>' if same
+                   else f'<span class="v-label">{e(label)}</span><span class="v-price">{brl(p)}</span>')
+            btns.append(f'<button type="button" class="add add-var" data-id="{iid}" data-label="{e(label)}" data-price="{p:.2f}">{sr}{txt}</button>')
         lead = f'<span class="price-lead">{brl(prices[0][1])} cada</span>' if same else ""
         opts = f'{lead}<div class="variants">{"".join(btns)}</div>'
     cls_row = "item-row" + (" item-row--wide" if len(prices) > 1 else "")
@@ -105,7 +105,7 @@ def render_menu():
             heading = "" if sec["title"] == cat["title"] else f'<h4 class="sec-title" id="{sid}-t">{e(sec["title"])}</h4>'
             secs.append(f'<section class="menu-sec" aria-labelledby="{sid}-t">{heading}{note}<ul class="items" role="list">{items}</ul></section>'
                         if heading else f'<section class="menu-sec">{note}<ul class="items" role="list">{items}</ul></section>')
-        cats.append(f'<section class="cat" id="cat-{cat["id"]}" data-cat="{cat["id"]}" aria-labelledby="cat-{cat["id"]}-t">'
+        cats.append(f'<section class="cat" id="cat-{cat["id"]}" data-cat="{cat["id"]}" aria-labelledby="cat-{cat["id"]}-t"{"" if ci == 0 else " hidden"}>'
                     f'<h3 class="cat-title" id="cat-{cat["id"]}-t">{e(cat["title"])}</h3>{"".join(secs)}</section>')
     return "".join(chips), "".join(cats)
 

@@ -53,17 +53,35 @@
     cats.forEach((c) => { c.hidden = c.dataset.cat !== id; });
   };
 
+  // Marcador fixo logo antes da barra (a barra é "sticky", então a posição dela não serve de referência)
+  const sentinel = document.createElement("div");
+  tools.before(sentinel);
+
   chips.forEach((chip) => chip.addEventListener("click", () => {
     if (q.value) { q.value = ""; applySearch(); }
     showCat(chip.dataset.cat);
-    chip.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
-    const top = tools.getBoundingClientRect().top + window.scrollY - 1;
+    const strip = chip.parentElement;
+    strip.scrollTo({ left: chip.offsetLeft - (strip.clientWidth - chip.offsetWidth) / 2, behavior: "smooth" });
+    const top = sentinel.getBoundingClientRect().top + window.scrollY;
     if (window.scrollY > top) window.scrollTo({ top, behavior: "smooth" });
     track("menu_category", { category: chip.dataset.cat });
   }));
 
+  let index = null; // montado na primeira busca, a partir do próprio texto da página
+  const buildIndex = () => {
+    index = new Map();
+    cats.forEach((cat) => {
+      const catTitle = $(".cat-title", cat).textContent;
+      $$(".menu-sec", cat).forEach((sec) => {
+        const secTitle = $(".sec-title", sec)?.textContent || "";
+        $$(".item", sec).forEach((it) => index.set(it, norm(`${it.textContent} ${secTitle} ${catTitle}`)));
+      });
+    });
+  };
+
   const applySearch = () => {
     const term = norm(q.value);
+    if (term && !index) buildIndex();
     chipsBar.classList.toggle("is-search", !!term);
     if (!term) {
       $$(".item, .menu-sec").forEach((el) => { el.hidden = false; });
@@ -78,7 +96,7 @@
       $$(".menu-sec", cat).forEach((sec) => {
         let secHits = 0;
         $$(".item", sec).forEach((it) => {
-          const hit = words.every((w) => it.dataset.search.includes(w));
+          const hit = words.every((w) => index.get(it).includes(w));
           it.hidden = !hit;
           if (hit) secHits++;
         });
@@ -101,8 +119,6 @@
 
   /* Borda na barra de busca quando ela gruda no topo */
   if ("IntersectionObserver" in window) {
-    const sentinel = document.createElement("div");
-    tools.before(sentinel);
     new IntersectionObserver(([e]) => tools.classList.toggle("is-stuck", !e.isIntersecting)).observe(sentinel);
   }
 
