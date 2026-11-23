@@ -402,6 +402,58 @@ main { width: var(--wrap); margin-inline: auto; }
   .chips { padding-inline: 0; flex-wrap: wrap; }
   .chips-wrap { -webkit-mask-image: none; mask-image: none; }
 }
+/* ---------- Desktop ---------- */
+@media (min-width: 960px) {
+  :root { --wrap: min(100% - 64px, 1120px); }
+  html { scroll-padding-top: 140px; }
+  .hero { padding: 56px 0 96px; }
+  .logo-wrap { width: 200px; }
+  .links {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px; margin-top: -56px;
+  }
+  .link--primary { grid-column: 1 / -1; justify-self: center; width: min(100%, 560px); }
+  .link:not(.link--primary) { padding: 14px 16px 14px 10px; gap: 10px; }
+  .link:not(.link--primary) .chev { display: none; }
+  .link:not(.link--primary) .link-ic { width: 44px; height: 44px; }
+  .link-text strong { font-size: 1rem; }
+  .link-text small { font-size: .8125rem; }
+
+  .menu { margin-top: 64px; }
+  .menu-head { display: flex; align-items: baseline; gap: 20px; }
+  .menu-head p { margin: 0; }
+  .today { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 28px; }
+  .today-eyebrow { grid-column: 1; }
+  .today-title { grid-column: 1; margin-bottom: 0; }
+  .today-list { grid-column: 2; grid-row: 1 / span 2; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; }
+  .menu-tools { display: grid; grid-template-columns: 320px 1fr; align-items: center; gap: 16px; padding-block: 12px; }
+  .chips-wrap { margin: 0; }
+
+  .cat { margin-top: 32px; }
+  .menu-sec { margin-top: 26px; }
+  .items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+  .item, .item:last-child {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 4px 16px;
+    transition: border-color .2s var(--ease);
+  }
+  .item:hover { border-color: var(--line-strong); }
+  .item.is-today { border-color: oklch(0.79 0.16 86 / 0.6); }
+
+  .faq details { break-inside: avoid; }
+  .faq { columns: 2; column-gap: 40px; }
+  .faq h2 { column-span: all; }
+  .bagbar-btn { width: 420px; margin-right: 0; }
+  .bagbar { background: none; padding-right: 32px; }
+  .toast { left: auto; right: 32px; translate: 0 8px; }
+  .toast.is-on { translate: 0 0; }
+}
+@media (min-width: 1280px) {
+  .items { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
